@@ -28,7 +28,7 @@
     "typescript",
     "github api"
   ],
-  "author": "Jason Etcovitch <jasonetco@gmail.com>",
+  "author": "Victor Malov <victor.malov@breeffy.com>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/JasonEtco/actions-toolkit/issues"

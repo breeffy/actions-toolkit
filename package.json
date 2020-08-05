@@ -1,5 +1,5 @@
 {
-  "name": "actions-toolkit",
+  "name": "@breeffy/actions-toolkit",
   "version": "5.0.0",
   "description": "A toolkit for building GitHub Actions in Node.js",
   "main": "./lib/index.js",

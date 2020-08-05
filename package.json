@@ -16,7 +16,8 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "tsc --noEmit -p tests && jest --coverage && yarn lint",
     "test:update": "tsc --noEmit -p tests && jest --coverage -u && yarn lint",
-    "prepare": "yarn build"
+    "prepare": "yarn build",
+    "prepublishOnly" : "yarn test"
   },
   "repository": {
     "type": "git",

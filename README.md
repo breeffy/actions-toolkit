@@ -8,7 +8,7 @@
   <a href="#faq">FAQ</a>
 </p>
 
-<p align="center"><a href="https://github.com/JasonEtco/actions-toolkit"><img alt="GitHub Actions status" src="https://github.com/JasonEtco/actions-toolkit/workflows/Node%20CI/badge.svg"></a> <a href="https://codecov.io/gh/JasonEtco/actions-toolkit/"><img src="https://badgen.now.sh/codecov/c/github/JasonEtco/actions-toolkit" alt="Codecov"></a></p>
+<p align="center"><a href="https://github.com/breeffy/actions-toolkit"><img alt="GitHub Actions status" src="https://github.com/breeffy/actions-toolkit/workflows/Node%20CI/badge.svg"></a> <a href="https://codecov.io/gh/breeffy/actions-toolkit"><img src="https://badgen.net/codecov/c/github/breeffy/actions-toolkit" alt="Codecov"></a></p>
 
 This toolkit is an opinionated alternative to (and wrapper around) the [official toolkit](https://github.com/actions/toolkit). `actions/toolkit` makes many features optional in the interest of performance, so you may prefer to use it instead of this library.
 
@@ -17,18 +17,18 @@ This toolkit is an opinionated alternative to (and wrapper around) the [official
 ### Installation
 
 ```sh
-$ npm install actions-toolkit
+$ yarn install @breeffy/actions-toolkit
 ```
 
 ```js
-const { Toolkit } = require('actions-toolkit')
+const { Toolkit } = require('@breeffy/actions-toolkit')
 const tools = new Toolkit()
 ```
 
 ### Bootstrap a new action
 
 ```
-$ npx actions-toolkit my-cool-action
+$ npx @breeffy/actions-toolkit my-cool-action
 ```
 
 This will create a new folder `my-cool-action` with the following files:
@@ -376,7 +376,7 @@ Toolkit.run(async tools => {
 <summary>index.test.js</summary>
 
 ```js
-const { Toolkit } = require('actions-toolkit')
+const { Toolkit } = require('@breeffy/actions-toolkit')
 describe('tests', () => {
   let action
 

@@ -1,3 +1,25 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '💥 Breaking Changes'
+    label: 'breaking-change-pull-request'
+  - title: '🚀 New Features'
+    label: 'new-feature-pull-request'
+  - title: '🌟 Updates'
+    label: 'update-feature-pull-request'
+  - title: '🐛 Bug Fixes'
+    label: 'bugfix-pull-request'
+version-resolver:
+  major:
+    labels:
+      - 'major-version'
+  minor:
+    labels:
+      - 'minor-version'
+  patch:
+    labels:
+      - 'patch-version'
+  default: patch
 template: |
   ## What’s Changed
 

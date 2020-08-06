@@ -1,6 +1,6 @@
 {
   "name": "@breeffy/actions-toolkit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A toolkit for building GitHub Actions in Node.js",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -17,7 +17,7 @@
     "test": "tsc --noEmit -p tests && jest --coverage && yarn lint",
     "test:update": "tsc --noEmit -p tests && jest --coverage -u && yarn lint",
     "prepare": "yarn build",
-    "prepublishOnly" : "yarn test"
+    "prepublishOnly": "yarn test"
   },
   "repository": {
     "type": "git",

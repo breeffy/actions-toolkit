@@ -1,4 +1,4 @@
-import * as core from '@actions/core'
+import { getEnvironmentVariable } from './utils'
 
 export interface StateType { [key: string]: string | undefined }
 
@@ -6,8 +6,8 @@ export function createStateProxy <S extends StateType = StateType>() {
   return new Proxy<S>({} as S, {
     get (_, name: string) {
       // When we attempt to get `states.___`, instead
-      // we call `core.getState`.
-      return core.getState(name)
+      // we call `getEnvironmentVariable`.
+      return getEnvironmentVariable('state', name)
     },
     getOwnPropertyDescriptor() {
       // We need to overwrite this to ensure that

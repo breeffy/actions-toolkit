@@ -1,13 +1,13 @@
 import { getEnvironmentVariable } from './utils'
 
-export interface InputType { [key: string]: string | undefined }
+export interface StateType { [key: string]: string | undefined }
 
-export function createInputProxy <I extends InputType = InputType>() {
-  return new Proxy<I>({} as I, {
+export function createStateProxy <S extends StateType = StateType>() {
+  return new Proxy<S>({} as S, {
     get (_, name: string) {
-      // When we attempt to get `inputs.___`, instead
+      // When we attempt to get `states.___`, instead
       // we call `getEnvironmentVariable`.
-      return getEnvironmentVariable('input', name)
+      return getEnvironmentVariable('state', name)
     },
     getOwnPropertyDescriptor() {
       // We need to overwrite this to ensure that
@@ -20,7 +20,7 @@ export function createInputProxy <I extends InputType = InputType>() {
     },
     ownKeys () {
       const keys = Object.keys(process.env)
-      const filtered = keys.filter(key => key.startsWith('INPUT_'))
+      const filtered = keys.filter(key => key.startsWith('STATE_'))
       return filtered
     }
   })

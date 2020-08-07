@@ -46,8 +46,9 @@ This will create a new folder `my-cool-action` with the following files:
 * [The Toolkit class](#toolkit-options)
 * [Authenticated GitHub API client](#toolsgithub)
 * [Logging](#toolslog)
-* [Getting workflows' inputs](#toolsinputs)
+* [Getting workflow's inputs](#toolsinputs)
 * [Output information from your action](#toolsoutputs)
+* [Send values to pre / post actions](#toolsstates)
 * [Slash commands](#toolscommandcommand-args-match--promise)
 * [Reading files](#toolsreadfilepath-encoding--utf8)
 * [Run a CLI command](#toolsexec)
@@ -204,6 +205,19 @@ GitHub Actions workflows can define some "outputs" - options that can be passed 
 
 ```js
 tools.outputs.foo = 'bar'
+```
+
+_Note!_ This is not a plain object, it's an instance of [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), so be aware that there may be some differences.
+
+<br>
+
+### tools.states
+
+GitHub Actions can send some "states" - options that can be passed to the pre or post action's scripts. You can access those using `tools.states`:
+
+```js
+tools.states.foo = 'bar'
+console.log(tools.states.foo) // -> 'bar'
 ```
 
 _Note!_ This is not a plain object, it's an instance of [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy), so be aware that there may be some differences.

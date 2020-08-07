@@ -11,6 +11,7 @@ import { Assert } from './assert'
 import { getBody } from './get-body'
 import { createInputProxy, InputType } from './inputs'
 import { createOutputProxy, OutputType } from './outputs'
+import { createStateProxy, StateType } from './states'
 
 export interface ToolkitOptions {
   /**
@@ -31,7 +32,7 @@ export interface ToolkitOptions {
   token?: string
 }
 
-export class Toolkit<I extends InputType = InputType, O extends OutputType = OutputType> {
+export class Toolkit<I extends InputType = InputType, O extends OutputType = OutputType, S extends StateType = StateType> {
   /**
    * Run an asynchronous function that accepts a toolkit as its argument, and fail if
    * an error occurs.
@@ -118,6 +119,11 @@ export class Toolkit<I extends InputType = InputType, O extends OutputType = Out
    */
   public outputs: O
 
+  /**
+   * An object of the states provided to your action. These can all be `undefined`!
+   */
+  public states: S
+
   constructor (opts: ToolkitOptions = {}) {
     this.opts = opts
 
@@ -135,6 +141,7 @@ export class Toolkit<I extends InputType = InputType, O extends OutputType = Out
     // Memoize our Proxy instance
     this.inputs = createInputProxy<I>()
     this.outputs = createOutputProxy<O>()
+    this.states = createStateProxy<S>()
 
     // Memoize the GitHub API token
     this.token = opts.token || this.inputs.github_token || process.env.GITHUB_TOKEN as string

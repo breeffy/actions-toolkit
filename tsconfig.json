@@ -1,22 +1,15 @@
 {
   "compilerOptions": {
-    "allowJs": false,
-    "lib": [
-      "es2015",
-      "es2017"
-    ],
+    "target": "ES2015",
+    "lib": ["ES2015"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es5",
-    "noImplicitReturns": true,
+    "allowJs": false,
     "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "pretty": true,
     "strict": true,
     "sourceMap": true,
     "outDir": "./lib",
     "skipLibCheck": true,
-    "noImplicitAny": true,
     "esModuleInterop": true,
     "declaration": true
   },
